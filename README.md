@@ -1,14 +1,14 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+Todo app that showcases completion of tasks, due dates, and task descriptions.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Staying organized can be difficult. Having a simple todo app can relieve stress from your day, and give you peace of mind.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+The main coding language used throughout this project is JavaScript. This project uses various techniques such as importing and exporting JavaScript files. The todo app also uses the "this.\_" encapsulation method to identify properties of a class that are intended to be private.
 
 ## Deployment
 
