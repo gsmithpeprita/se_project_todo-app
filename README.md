@@ -14,4 +14,4 @@ The main coding language used throughout this project is JavaScript. This projec
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- https://gsmithpeprita.github.io/se_project_todo-app/
