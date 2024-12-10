@@ -22,7 +22,7 @@ class FormValidator {
     );
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(settings.errorClass);
+    errorElement.classList.add(this._settings.errorClass);
   }
 
   _hideInputError(inputElement) {
@@ -33,6 +33,22 @@ class FormValidator {
     errorElement.classList.remove(this._errorClass);
     errorElement.textContent = "";
   }
+
+  _hasInvalidInput = (inputList) => {
+    return inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
+  };
+
+  _toggleButtonState = (inputList, buttonElement, settings) => {
+    if (this._hasInvalidInput(inputList)) {
+      buttonElement.classList.add(this._inactiveButtonClass);
+      buttonElement.disabled = true;
+    } else {
+      buttonElement.classList.remove(this._inactiveButtonClass);
+      buttonElement.disabled = false;
+    }
+  };
 
   _setEventListeners() {
     this._inputList = Array.from(
@@ -57,6 +73,18 @@ class FormValidator {
       evt.preventDefault();
     });
     this._setEventListeners();
+  }
+
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+      inputElement.value = "";
+    });
+    const buttonElement = this._formEl.querySelector(
+      this._submitButtonSelector
+    );
+    buttonElement.classList.add(this._inactiveButtonClass);
+    buttonElement.disabled = true;
   }
 }
 
